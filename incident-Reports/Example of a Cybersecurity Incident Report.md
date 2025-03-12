@@ -1,10 +1,3 @@
----
-title: |
-  []{#_u0icpqvhlc9d .anchor}Example of a
-
-  []{#_pq0jqkm24ol0 .anchor}Cybersecurity Incident Report
----
-
 This report **example** is for a different security event than the
 scenario presented in the activity. This example should only be used to
 familiarize yourself with the expected report format.
