@@ -1,0 +1,55 @@
+# Cybersecurity Incident Report
+
+## Part 1: Summary of the Problem Found in the tcpdump Log
+
+The network traffic logs indicate that **DNS resolution failed** for the website `yummyrecipesforme.com`. The `tcpdump` analysis shows that **UDP requests to port 53** on the DNS server were met with **ICMP "port unreachable"** responses.
+
+### Key Observations:
+- The client at `192.51.100.15` sent a **DNS request (UDP) to 203.0.113.2:53**.
+- The DNS server responded with **ICMP "port 53 unreachable"** errors.
+- The error repeated multiple times, confirming a persistent issue.
+
+### Impact:
+Since DNS is essential for resolving domain names to IP addresses, this failure **prevents users from accessing websites and online services**. Without a functioning DNS, users **cannot reach web resources**.
+
+---
+
+## Part 2: Analysis of the Data and Cause of the Incident
+
+### Time of Incident:
+- **First recorded:** `13:24:32`
+- **Subsequent failures:** `13:26:32` and `13:28:32`, confirming an ongoing issue.
+
+### How the IT Team Became Aware:
+- Users reported **website access failures**.
+- Browser error: **"Destination port unreachable"**.
+- **Network protocol analysis (`tcpdump`)** confirmed **DNS resolution failures** due to **ICMP errors**.
+
+### Investigation Steps:
+1. **Attempted direct website access** – Failed due to DNS resolution issues.
+2. **Captured network traffic (`tcpdump`)** – Analyzed DNS queries and responses.
+3. **Checked ICMP responses** – Found repeated `"port 53 unreachable"` messages.
+4. **Confirmed DNS service failure** – No response from `203.0.113.2` on port 53.
+
+### Key Findings:
+- **UDP port 53 is unreachable**, affecting DNS resolution.
+- The **DNS server at `203.0.113.2`** is either **down or misconfigured**.
+- **ICMP error messages confirm** that no service is listening on port 53.
+
+### Likely Cause:
+The **DNS service on `203.0.113.2`** is **either down, misconfigured, or blocked by a firewall**. If the **DNS server is not running** or **firewall rules have changed**, **DNS queries will fail**, leading to the **ICMP "port unreachable"** errors.
+
+---
+
+## Summary of Findings
+The **tcpdump log** confirms multiple **DNS queries** to `203.0.113.2` for `yummyrecipesforme.com`, all resulting in **ICMP "port 53 unreachable"** responses. This suggests that **the DNS server is not responding to requests**, making domain resolution impossible.
+
+### Next Steps:
+- **Verify if the DNS server is running**.
+- **Check firewall rules** to ensure UDP **port 53 is open**.
+- **Investigate recent configuration changes** on the DNS server.
+- **Test an alternative DNS server** to confirm if the issue is isolated.
+- **Restart the DNS service** or **switch to a backup DNS server**.
+
+### Suspected Root Cause:
+A **failure of the DNS service on `203.0.113.2`**, likely due to **server misconfiguration, a firewall block, or the service being down**.
