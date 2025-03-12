@@ -1,20 +1,34 @@
+Cybersecurity Projects
 
-# Cybersecurity Projects
+This repository showcases my cybersecurity projects, home lab experiments, security audits, and incident response reports. These projects demonstrate my hands-on experience with network security, system hardening, risk assessments, and penetration testing.
 
-This repository contains various cybersecurity projects, including incident reports, network analysis, and security investigations.
+🔹 Repository Overview
 
-## 🔍 Included Reports:
-- **DNS and ICMP Incident Analysis** – Investigating a DNS failure and unreachable port 53 using tcpdump logs.
+1. Security Audits & Risk Assessments
+	•	Contains security audits, risk assessments, and compliance evaluations for various environments.
+	•	Includes Botium Toys Security Audit (2025) with key findings and recommendations for security improvements.
 
-## 📌 How to Use:
-- Review the reports to understand **real-world cybersecurity incidents**.
-- Use them as **reference material** for security investigations.
-- Contribute by adding **your own security analysis**.
+2. Home Lab & Network Security
+	•	Documents my home network security hardening process, firewall configurations, and performance optimizations.
+	•	Includes:
+	•	Network segmentation, IDS implementation, and access control policies.
+	•	Secure DNS-over-HTTPS (DoH) configuration.
+	•	Future additions: VPN setup, URL filtering, and advanced IPS testing.
 
-## 🚀 Future Plans:
-- 🔹 More incident reports covering **different attack vectors**.
-- 🔹 Network security case studies.
-- 🔹 Potential **hands-on labs** for cybersecurity learners.
+3. Incident Response & Investigations (Coming Soon)
+	•	Reports on security incidents analyzed using network monitoring tools like tcpdump and Wireshark.
+	•	Example case: DNS service disruption due to port 53 inaccessibility, analyzed through ICMP error messages.
 
----
-🛡️ Feel free to fork this repo, contribute, or reach out for discussions!
+🔹 Skills Demonstrated
+
+✅ Network Security & Firewall Configurations
+✅ Incident Response & Forensic Analysis
+✅ Compliance & Risk Assessment
+✅ Threat Hunting & Log Analysis
+✅ Penetration Testing & Ethical Hacking
+✅ Security Hardening & Best Practices
+
+🔹 Future Additions
+	•	Red Team & Blue Team simulations.
+	•	Advanced penetration testing reports.
+	•	More in-depth network security case studies.
