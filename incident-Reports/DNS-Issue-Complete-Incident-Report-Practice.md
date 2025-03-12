@@ -1,4 +1,4 @@
-# Cybersecurity Incident Report:  {#cybersecurity-incident-report}
+# Cybersecurity Incident Report:
 
 # Network Traffic Analysis
 
