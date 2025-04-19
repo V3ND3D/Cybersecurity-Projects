@@ -1,37 +1,82 @@
-# 🏠 Home Lab Setup  
+# 🛡️ Home Network Security Hardening (2025)
 
-This folder contains my **home network security projects**, configurations, and optimizations.  
-I document how I **hardened my home network**, improved security protocols, optimized network performance, and tested cybersecurity tools.  
+> Hardened and optimized my home network after a forced ISP factory reset.  
+> Focused on balancing **OPSEC**, **gaming performance**, **streaming stability**, and **long-term scalability** for future home lab expansions.
 
-## 🔹 Projects in This Folder:  
+---
 
-### 🔐 **Home Network Security Hardening (2025)**  
-- Secured an **unsecured home network** using industry-standard best practices.  
-- Implemented **WPA2-PSK encryption, MAC address filtering, and secure DNS settings**.  
-- Configured **firewall rules, network segmentation, and access controls** for better security.  
-- Improved **network monitoring, logging, and intrusion detection measures**.  
-- Deployed **WiFi extenders to improve coverage** while ensuring **secure configurations, encryption, and access control policies**.  
-- **Enabled only necessary uPnP settings** for **seamless gaming** while maintaining security best practices.  
-- Activated **5GHz WiFi** for **better performance, reduced interference, and improved security over 2.4GHz**.  
+## 🔐 Configuration Overview
 
-### 🛡 **Firewall & IDS Configurations**  
-- Set up a **firewall to restrict unauthorized access** and reduce attack surfaces.  
-- Implemented **Intrusion Detection Systems (IDS) for monitoring potential threats**.  
-- Strengthened **port management, service restrictions, and outbound filtering** to minimize risks.  
+| Setting                     | Value / Status                          |
+|-----------------------------|------------------------------------------|
+| Gateway / Modem             | ARRIS (Liberty ISP)                     |
+| DNS                         | Cloudflare (1.1.1.1 / 1.0.0.1)          |
+| DHCP Range                  | 192.168.0.100 – 192.168.0.200           |
+| Wi-Fi Encryption            | WPA2-PSK (AES) only (2.4GHz + 5GHz)     |
+| IPv6                        | ❌ Disabled (WAN + LAN)                 |
+| WPS                         | ❌ Disabled                             |
+| UPnP                        | ✅ Enabled for Xbox only                |
+| Remote Management           | ❌ Disabled (HTTP + HTTPS fully off)    |
+| DDNS                        | ❌ Disabled                             |
+| DMZ                         | ❌ Disabled                             |
+| Admin Access                | LAN only (no WAN access)               |
+| ProtonVPN                   | Used on public Wi-Fi only              |
 
-### 📡 **Network Performance & Security Improvements**  
-- Tuned **router settings to balance security and gaming performance**.  
-- Analyzed **traffic logs for potential vulnerabilities**.  
-- Configured **secure DNS-over-HTTPS (DoH) settings** to prevent DNS hijacking and improve privacy.  
+---
 
-## 🚀 **Future Additions:**  
-✅ **MAC Address Whitelisting** – Restricting network access to **trusted devices only** for added security.  
-✅ **Locally Hosted VPN** – Running a self-hosted VPN for **private, encrypted remote access**.  
-✅ **URL Blocking & Parental Controls** – Implementing DNS-based filtering to **block unwanted sites & content**.  
-✅ **WiFi Security Testing & Cracking (Ethical Assessment)** – Conducting **penetration tests** against my home network and extenders to identify vulnerabilities after earning my **Networking Certification**.  
-✅ **Advanced network segmentation for better security** *(e.g., isolating IoT devices & guest networks)*  
-✅ **Testing different firewall configurations & deep packet inspection (DPI) tuning**  
-✅ **Exploring IPS (Intrusion Prevention System) for real-time security enforcement**  
-✅ **Experimenting with cybersecurity tools in a controlled home lab environment**  
+## 🧱 Firewall & ALG Configuration
 
-🚀 **More security optimizations coming soon!**
+- ✅ **Firewall Enabled** with DoS protection and ICMP blocking  
+- ✅ **Block Fragmented IP Packets**  
+- ✅ **IPSec & L2TP Passthrough** ON (for VPN compatibility)  
+- ✅ **ALG: Only SIP + IKE enabled** for FaceTime & VPN  
+- ❌ **All other ALGs (FTP, TFTP, PPTP, IRC, etc.) disabled**  
+
+---
+
+## 📶 Wi-Fi Settings
+
+### 2.4GHz
+- SSID: `Wifi_Casa 2.4GHz`
+- Security: WPA2-PSK (AES)
+- Channel: Manual (1 / 6 / 11)
+- Bandwidth: 20MHz
+- TX Power: High
+
+### 5GHz
+- SSID: `Wifi_Casa 5GHz`
+- Security: WPA2-PSK (AES)
+- Channel: Manual (DFS-free range)
+- Bandwidth: 40–80MHz
+- TX Power: High
+
+---
+
+## 🧠 Security Notes
+
+- Cleaned and re-secured repeater with WPA2-AES, static IP, and WPS off  
+- Set static IPs for repeater and Xbox to maintain UPnP consistency  
+- Admin credentials changed and stored offline  
+- All changes exported as `.bin` config backup post-hardening  
+- Verified stealth mode with ping blocks, no open ports, no remote access  
+
+---
+
+## 🔮 Future Additions & Home Lab Goals
+
+- ✅ MAC address whitelisting  
+- ✅ Guest Wi-Fi with isolation  
+- ✅ Self-hosted VPN (OpenVPN / WireGuard)  
+- ✅ Parental controls & URL filtering via DNS  
+- ✅ Ethical Wi-Fi testing after earning networking certifications  
+- ✅ VLAN segmentation for IoT + guest devices  
+- ✅ Deploy IDS/IPS for live monitoring & packet inspection  
+- ✅ Launch local NAS and/or Plex server  
+- ✅ Backup config auto-versioned into GitHub (private repo)
+
+---
+
+📁 Full configuration log & recovery file:  
+`Yeray_Router_Config_Apr19_2025.bin`
+
+_Last updated: April 19, 2025_
