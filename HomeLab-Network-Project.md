@@ -37,14 +37,14 @@
 ## 📶 Wi-Fi Settings
 
 ### 2.4GHz
-- SSID: `Wifi_Casa 2.4GHz`
+- SSID: `<Private_2.4GHz_SSID>`
 - Security: WPA2-PSK (AES)
 - Channel: Manual (1 / 6 / 11)
 - Bandwidth: 20MHz
 - TX Power: High
 
 ### 5GHz
-- SSID: `Wifi_Casa 5GHz`
+- SSID: `<Private_5GHz_SSID>`
 - Security: WPA2-PSK (AES)
 - Channel: Manual (DFS-free range)
 - Bandwidth: 40–80MHz
