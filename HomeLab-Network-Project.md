@@ -73,7 +73,32 @@
 - ✅ Deploy IDS/IPS for live monitoring & packet inspection  
 - ✅ Launch local NAS and/or Plex server  
 - ✅ Backup config auto-versioned into GitHub (private repo)
+---
 
+## 🔐 Device-Level OPSEC: Private MAC Addresses
+
+To prevent MAC-based tracking, profiling, or network fingerprinting, all personal devices (MacBook, iPhone, iPad) are configured with:
+
+### 📱 Private Wi-Fi Address (MAC Randomization)
+
+- ✅ Enabled per-device, per-network
+- 💡 Behavior: Each network receives a **unique randomized MAC address**
+- 🔒 Obfuscates true hardware MAC from ISP, router logs, and passive network sniffing
+- 📡 Reduces traceability when connecting to public or semi-public Wi-Fi
+
+### 🧠 OPSEC Notes
+
+- Devices do not reuse MACs across different networks
+- Random MACs are consistent per network unless the SSID is forgotten
+- **Static IPs and MAC-based filtering are avoided** unless mapped to the randomized MAC
+- Ideal for stealthy connections, evasion of passive tracking, and generalized privacy
+
+---
+
+📌 Active Devices Using Private MACs:
+- ✅ MacBook Air (Personal)
+- ✅ iPhone 14 Pro (Personal)
+- ✅ iPad Air 4th Gen (Personal)
 ---
 
 📁 Full configuration log & recovery file:  
